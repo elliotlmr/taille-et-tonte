@@ -1,16 +1,56 @@
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url(../fonts/Montserrat-Bold.otf);
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url(../fonts/Montserrat-Medium.otf);
+}
+
+@font-face {
+  font-family: "Reey";
+  src: url(../fonts/Reey-Regular.otf);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow-x: hidden;
+  font-family: "Montserrat-Medium", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+
+  /* background-image: url(../images/gaz.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center; */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-gl);
+  border-radius: 5px;
 }
 
 * {
   box-sizing: border-box;
+
+  /* Variables :  */
+  --color-dark: #00010d;
+  --color-gd: #012611;
+  --color-g: #0d4014;
+  --color-gl: #2b7320;
+  --color-gll: #66a626;
+  --color-light: #fafafa;
+
+  --color-y: #ffe417;
+
+  --color-dark-soft: rgba(0, 1, 13, 0.5);
+  --color-light-soft: rgba(250, 250, 250, 0.5);
 }
