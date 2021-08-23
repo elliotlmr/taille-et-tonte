@@ -3,8 +3,9 @@ import Layout from "../components/globals/Layout";
 //import Bg1 from "../images/gaz.jpg";
 import Image from "next/image";
 import { useEffect } from "react";
+import Link from "next/link";
 
-const BgContainer = styled.div`
+const BgContainer = styled.section`
   z-index: 0;
   position: relative;
   width: 100%;
@@ -96,6 +97,10 @@ const Reference = styled.p`
   font-size: 1.5rem;
   color: var(--color-light);
   filter: drop-shadow(0 0 1px var(--color-dark));
+  & span {
+    font-family: "Montserrat-Medium", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+  }
 `;
 
 const Text = styled.p`
@@ -108,10 +113,10 @@ const Text = styled.p`
     font-size: 4rem;
   }
   &.homepage-text-2 {
-    margin: 20px 0;
+    margin: 20px 50px;
     font-size: 2rem;
     align-self: center;
-    text-align: center;
+    text-align: left;
   }
   &.homepage-text-3 {
     align-self: flex-end;
@@ -165,12 +170,13 @@ export default function Home() {
           src="/assets/images/gaz.jpg"
           alt="Photo de gazon"
           layout="fill"
+          priority="true"
           id="bg-img-1"
         />{" "}
         {/* width="1920" height="1280" */}
         <Title id="title-homepage">Entretenir votre jardin</Title>
         <Reference>
-          par Frédéric Stravius <br />- 06 19 39 49 83 -<br />
+          par Frédéric Stravius <br />- <span>06 19 39 49 83</span> -<br />
           Concarneau
         </Reference>
       </BgContainer>
@@ -180,7 +186,9 @@ export default function Home() {
             Choisissez les prestations qui vous intéressent.
           </Text>
         </Subcontainer>
-        <Button>En savoir plus</Button>
+        <Link href="/prestations">
+          <Button>En savoir plus</Button>
+        </Link>
         <Subcontainer className="homepage-sub-2">
           <Text className="homepage-text-2">
             Intervention ponctuelle, ou contrat à l'année : <br />

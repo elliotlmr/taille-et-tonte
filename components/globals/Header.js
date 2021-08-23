@@ -16,8 +16,8 @@ const HeaderContainer = styled.header`
 
 const LogoContainer = styled.div`
   margin: 30px 15px 0 15px;
-  width: 150px;
-  filter: drop-shadow(0 0 2px var(--color-dark));
+  width: 250px;
+  filter: drop-shadow(1px 0 0 var(--color-dark));
 `;
 
 const Logo = styled(Image)`
@@ -84,10 +84,11 @@ export default function Header(props) {
       <LogoContainer>
         <NavButton href="/">
           <Logo
-            src="/assets/logo-big.png"
-            width="561"
-            height="521"
+            src="/assets/logo-new.png"
+            width="2045"
+            height="1287"
             layout="responsive"
+            priority="true"
           />
         </NavButton>
       </LogoContainer>
