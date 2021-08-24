@@ -81,8 +81,8 @@ export default function Header(props) {
 
   return (
     <HeaderContainer>
-      <LogoContainer>
-        <NavButton href="/">
+      <NavButton href="/">
+        <LogoContainer>
           <Logo
             src="/assets/logo-big.png"
             width="2045"
@@ -90,8 +90,8 @@ export default function Header(props) {
             layout="responsive"
             priority="true"
           />
-        </NavButton>
-      </LogoContainer>
+        </LogoContainer>
+      </NavButton>
       <NavContainer>
         <ButtonContainer>
           <NavButton href="/">
