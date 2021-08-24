@@ -84,7 +84,7 @@ export default function Header(props) {
       <LogoContainer>
         <NavButton href="/">
           <Logo
-            src="/assets/logo-new.png"
+            src="/assets/logo-big.png"
             width="2045"
             height="1287"
             layout="responsive"

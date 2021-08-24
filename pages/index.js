@@ -164,7 +164,7 @@ export default function Home() {
   });
 
   return (
-    <Layout page="Taille & Tonte | Accueil - Entretien de Jardin">
+    <Layout page="Taille et Tonte | Accueil - Entretien de Jardin">
       <BgContainer className="homepage-s1">
         <BgImage
           src="/assets/images/gaz.jpg"
@@ -172,8 +172,7 @@ export default function Home() {
           layout="fill"
           priority="true"
           id="bg-img-1"
-        />{" "}
-        {/* width="1920" height="1280" */}
+        />
         <Title id="title-homepage">Entretenir votre jardin</Title>
         <Reference>
           par Frédéric Stravius <br />- <span>06 19 39 49 83</span> -<br />
@@ -191,8 +190,8 @@ export default function Home() {
         </Link>
         <Subcontainer className="homepage-sub-2">
           <Text className="homepage-text-2">
-            Intervention ponctuelle, ou contrat à l'année : <br />
-            Nous décidons ensemble de la formule idéale pour l'entretien de
+            Intervention ponctuelle, ou contrat à l&apos;année : <br />
+            Nous décidons ensemble de la formule idéale pour l&apos;entretien de
             votre jardin.
           </Text>
           <Text className="homepage-text-3">

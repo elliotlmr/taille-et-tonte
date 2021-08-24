@@ -163,7 +163,7 @@ export default function Home() {
   ];
 
   return (
-    <Layout page="Taille & Tonte | Prestations - Entretien de Jardin">
+    <Layout page="Taille et Tonte | Prestations - Entretien de Jardin">
       <Section>
         <Container className="prestations-left">
           <PrestaList>
@@ -183,7 +183,7 @@ export default function Home() {
                 height="32px"
                 layout="fixed"
               />
-              <span>Taille de haie et d'arbustes</span>
+              <span>Taille de haie et d&apos;arbustes</span>
             </Prestation>
             <Prestation onMouseOver={() => setIndex(2)}>
               <Leaf
