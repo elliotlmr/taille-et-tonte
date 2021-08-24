@@ -1,9 +1,33 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Layout from "../components/globals/Layout";
 //import Bg1 from "../images/gaz.jpg";
 import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
+
+const bgImgAnimation = keyframes`
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const titleAnimation = keyframes`
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
 
 const BgContainer = styled.section`
   z-index: 0;
@@ -16,6 +40,7 @@ const BgContainer = styled.section`
   align-items: center;
   flex-direction: column;
   &.homepage-s1 {
+    background-color: var(--color-dark);
     &::before {
       content: "";
       position: absolute;
@@ -42,10 +67,12 @@ const BgContainer = styled.section`
 `;
 
 const BgImage = styled(Image)`
+  animation: ${bgImgAnimation} 1s both ease-in-out;
   position: absolute;
   top: 0;
   right: 0;
   object-fit: cover;
+  background-color: var(--color-dark);
 `;
 
 const Subcontainer = styled.div`
@@ -77,6 +104,7 @@ const Subcontainer = styled.div`
 `;
 
 const Title = styled.h1`
+  animation: ${titleAnimation} 0.5s both ease-in-out;
   z-index: 2;
   position: relative;
   left: 0;
@@ -164,7 +192,7 @@ export default function Home() {
   });
 
   return (
-    <Layout page="Taille et Tonte | Accueil - Entretien de Jardin">
+    <Layout animation page="Taille et Tonte | Accueil - Entretien de Jardin">
       <BgContainer className="homepage-s1">
         <BgImage
           src="/assets/images/gaz.jpg"

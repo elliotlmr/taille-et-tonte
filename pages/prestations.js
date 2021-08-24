@@ -128,9 +128,9 @@ const Subcontainer = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  height: 60%;
+  height: 50%;
   width: 60%;
-  border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+  border-radius: 100% 0% 100% 0% / 50% 50% 50% 50%;
   border: 1px solid var(--color-gll);
   background-color: var(--color-dark-soft);
   display: flex;
@@ -151,15 +151,21 @@ const Subcontainer = styled.div`
 
 const Description = styled.p`
   color: var(--color-light);
-  font-size: 1.2rem;
-  max-width: 50%;
+  font-size: 1.5rem;
+  max-width: 75%;
+  text-align: justify;
 `;
 
 export default function Home() {
   const [index, setIndex] = useState(null);
 
   const textArray = [
-    "Choisissez la taille de tonte, je m'occupe de raffraichir la coupe du gazon de votre jardin.",
+    "Choisissez la taille de tonte, je m'occupe de raffraichir la coupe du gazon de votre jardin en prenant soin de ne pas abîmer le terrain ou autres végétaux.",
+    "Taille simple ou complexe, je redonne forme à vos haies / arbustes pour refaçonner l'image de votre jardin.",
+    "Il est parfois difficile d'entretenir seul l'entièreté de son jardin. Je peux alors égaliser et nettoyer votre terrain.",
+    "Savoir entretenir son jardin et lui assurer un bon équilibre est important. Il faut alors nettoyer et parfois éliminer les mauvaises herbes.",
+    "Lors de la demi-saison, on se retrouve souvent débordé par la charge de travail liée au nettoyage du jardin. Je m'occupe de ramasser et d'évacuer les feuilles mortes.",
+    "Après chacune de mes prestation, je prend en charge l'évacuation des déchets verts si vous le souhaitez.",
   ];
 
   return (
@@ -244,7 +250,6 @@ export default function Home() {
               src="/assets/images/tonte.jpg"
               alt="Photo de gazon"
               layout="fill"
-              priority="true"
             />
           )}
           {index === 1 && (
@@ -252,7 +257,6 @@ export default function Home() {
               src="/assets/images/haie.jpg"
               alt="Photo de gazon"
               layout="fill"
-              priority="true"
             />
           )}
           {index === 2 && (
@@ -260,7 +264,6 @@ export default function Home() {
               src="/assets/images/debroussaillage.jpg"
               alt="Photo de gazon"
               layout="fill"
-              priority="true"
             />
           )}
           {index === 3 && (
@@ -268,7 +271,6 @@ export default function Home() {
               src="/assets/images/desherbage.jpg"
               alt="Photo de gazon"
               layout="fill"
-              priority="true"
             />
           )}
           {index === 4 && (
@@ -276,7 +278,6 @@ export default function Home() {
               src="/assets/images/feuille.jpg"
               alt="Photo de gazon"
               layout="fill"
-              priority="true"
             />
           )}
           {index === 5 && (
@@ -284,7 +285,6 @@ export default function Home() {
               src="/assets/images/dechets.jpg"
               alt="Photo de gazon"
               layout="fill"
-              priority="true"
             />
           )}
         </Container>

@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const HeaderContainer = styled.header`
   z-index: 5;
@@ -76,7 +77,7 @@ const Indicator = styled.div`
   }
 `;
 
-export default function Header(props) {
+export default function Header() {
   const router = useRouter();
 
   return (
