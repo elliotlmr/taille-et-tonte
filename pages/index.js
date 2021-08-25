@@ -128,7 +128,7 @@ const Title = styled.h1`
   }
   @media (max-width: 400px) {
     font-size: 3rem;
-    margin: 0 50px;
+    margin: 0 30px;
   }
 `;
 
@@ -139,12 +139,19 @@ const Reference = styled.p`
   right: 5%;
   text-align: center;
   font-family: "Reey", Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--color-light);
   filter: drop-shadow(0 0 1px var(--color-dark));
-  & span {
+  & a {
     font-family: "Montserrat-Medium", Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
+    color: var(--color-light);
+  }
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 1rem;
   }
 `;
 
@@ -243,7 +250,8 @@ export default function Home() {
         />
         <Title id="title-homepage">Entretenir votre jardin</Title>
         <Reference>
-          par Frédéric Stravius <br />- <span>06 19 39 49 83</span> -<br />
+          par Frédéric Stravius <br />-{" "}
+          <a href="tel:0619394983">06 19 39 49 83</a> -<br />
           Concarneau
         </Reference>
       </BgContainer>

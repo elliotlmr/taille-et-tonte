@@ -76,7 +76,7 @@ const Container = styled.div`
 const PrestaList = styled.ul`
   transition: all 0.3s ease-in-out;
   position: absolute;
-  left: 5%;
+  left: 10%;
   z-index: 2;
   display: flex;
   flex-direction: column;
