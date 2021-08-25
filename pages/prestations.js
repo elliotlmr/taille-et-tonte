@@ -76,7 +76,7 @@ const Container = styled.div`
 const PrestaList = styled.ul`
   transition: all 0.3s ease-in-out;
   position: absolute;
-  right: -10%;
+  left: 5%;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -84,6 +84,19 @@ const PrestaList = styled.ul`
   height: 50%;
   margin-top: 150px;
   list-style: none;
+  @media (max-width: 1150px) {
+    position: fixed;
+    left: 10%;
+    margin: auto;
+    width: max-content;
+  }
+  @media (max-width: 800px) {
+    height: 40%;
+  }
+  @media (max-width: 400px) {
+    left: 5%;
+    padding: 0;
+  }
 `;
 
 const Prestation = styled.li`
@@ -114,6 +127,18 @@ const Prestation = styled.li`
     left: 100px;
     &::before {
       width: 100%;
+    }
+  }
+  @media (max-width: 800px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 550px) {
+    font-size: 0.8rem;
+    &:hover {
+      left: 50px;
     }
   }
 `;
@@ -147,6 +172,24 @@ const Subcontainer = styled.div`
     border-radius: 70% 30% 100% 0% / 100% 50% 50% 0%;
     transform: rotate(-50deg);
   }
+  @media (max-width: 1350px) {
+    right: 5%;
+    left: auto;
+  }
+  @media (max-width: 1150px) {
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 10%;
+    height: 15%;
+    width: 80%;
+    border: none;
+    border-radius: unset;
+    background-color: transparent;
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 const Description = styled.p`
@@ -154,6 +197,21 @@ const Description = styled.p`
   font-size: 1.5rem;
   max-width: 75%;
   text-align: justify;
+  @media (max-width: 1350px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 1150px) {
+    text-align: center;
+  }
+  @media (max-width: 1150px) {
+    text-align: center;
+  }
+  @media (max-width: 700px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 550px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export default function Home() {

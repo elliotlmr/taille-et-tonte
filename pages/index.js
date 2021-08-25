@@ -114,6 +114,22 @@ const Title = styled.h1`
   align-self: flex-start;
   margin: 0 100px;
   filter: drop-shadow(0 0 1px var(--color-dark));
+  @media (max-width: 800px) {
+    font-size: 6rem;
+    margin: 0 50px;
+  }
+  @media (max-width: 600px) {
+    font-size: 5rem;
+    margin: 0 50px;
+  }
+  @media (max-width: 500px) {
+    font-size: 4rem;
+    margin: 0 50px;
+  }
+  @media (max-width: 400px) {
+    font-size: 3rem;
+    margin: 0 50px;
+  }
 `;
 
 const Reference = styled.p`
@@ -140,18 +156,36 @@ const Text = styled.p`
   margin: 0 50px;
   &.homepage-text-1 {
     font-size: 4rem;
+    @media (max-width: 650px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 2rem;
+    }
   }
   &.homepage-text-2 {
     margin: 20px 50px;
     font-size: 2rem;
     align-self: center;
     text-align: left;
+    @media (max-width: 550px) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 1rem;
+    }
   }
   &.homepage-text-3 {
     align-self: flex-end;
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 40px;
+    @media (max-width: 550px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 0.5rem;
+    }
   }
 `;
 
@@ -176,6 +210,11 @@ const Button = styled.button`
   text-shadow: 0 0 1px var(--color-dark);
   &:hover {
     transform: scale(1.1);
+  }
+  @media (max-width: 400px) {
+    width: 200px;
+    height: 75px;
+    font-size: 1.5rem;
   }
 `;
 
