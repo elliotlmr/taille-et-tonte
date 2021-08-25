@@ -32,7 +32,7 @@ const titleAnimation = keyframes`
 const BgContainer = styled.section`
   z-index: 0;
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -72,6 +72,7 @@ const BgImage = styled(Image)`
   top: 0;
   right: 0;
   object-fit: cover;
+  min-width: 100vw;
   background-color: var(--color-dark);
 `;
 

@@ -250,6 +250,7 @@ export default function Home() {
               src="/assets/images/tonte.jpg"
               alt="Photo de gazon"
               layout="fill"
+              priority="true"
             />
           )}
           {index === 1 && (
@@ -257,6 +258,7 @@ export default function Home() {
               src="/assets/images/haie.jpg"
               alt="Photo de gazon"
               layout="fill"
+              priority="true"
             />
           )}
           {index === 2 && (
@@ -264,6 +266,7 @@ export default function Home() {
               src="/assets/images/debroussaillage.jpg"
               alt="Photo de gazon"
               layout="fill"
+              priority="true"
             />
           )}
           {index === 3 && (
@@ -271,6 +274,7 @@ export default function Home() {
               src="/assets/images/desherbage.jpg"
               alt="Photo de gazon"
               layout="fill"
+              priority="true"
             />
           )}
           {index === 4 && (
@@ -278,6 +282,7 @@ export default function Home() {
               src="/assets/images/feuille.jpg"
               alt="Photo de gazon"
               layout="fill"
+              priority="true"
             />
           )}
           {index === 5 && (
@@ -285,6 +290,7 @@ export default function Home() {
               src="/assets/images/dechets.jpg"
               alt="Photo de gazon"
               layout="fill"
+              priority="true"
             />
           )}
         </Container>

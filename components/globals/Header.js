@@ -13,6 +13,9 @@ const HeaderContainer = styled.header`
   flex-direction: row;
   justify-content: space-around;
   width: 100vw;
+  @media (max-width: 1024px) {
+    justify-content: flex-start;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -26,11 +29,28 @@ const Logo = styled(Image)`
 `;
 
 const NavContainer = styled.nav`
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   width: 70%;
+  @media (max-width: 1024px) {
+    transform: scaleX(0);
+    position: fixed;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--color-dark-soft);
+    border-right: 2px solid var(--color-gll);
+    backdrop-filter: blur(10px);
+    &.menu-displayed {
+      transform: scale(1);
+    }
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -42,6 +62,35 @@ const ButtonContainer = styled.div`
     & div {
       background-color: var(--color-light);
       width: 100%;
+    }
+  }
+  @media (max-width: 1024px) {
+    transform: translateX(-150px);
+    opacity: 0;
+    &#display-1 {
+      transition: all 0.5s ease-in-out;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    &#display-2 {
+      transition: all 0.6s ease-in-out;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    &#display-3 {
+      transition: all 0.7s ease-in-out;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    &#display-4 {
+      transition: all 0.8s ease-in-out;
+      transform: translateX(0);
+      opacity: 1;
+    }
+    &#display-5 {
+      transition: all 0.9s ease-in-out;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 `;
@@ -77,11 +126,75 @@ const Indicator = styled.div`
   }
 `;
 
+const WrapContainer = styled.div`
+  transition: all 0.5s ease-in-out;
+  z-index: 10;
+  position: fixed;
+  right: 3%;
+  top: 5%;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-top: 2px solid var(--color-gll);
+  border-bottom: 2px solid var(--color-gll);
+  border-radius: 100% 0% 100% 0% / 50% 50% 50% 50%;
+  filter: drop-shadow(0 0 2px var(--color-dark));
+  &.menu-displayed {
+    border-color: var(--color-warm);
+  }
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+
+const WrapBar = styled.div`
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 25px;
+  height: 3px;
+  border-radius: 50px;
+  background-color: var(--color-light);
+  &#wrap-bar-1 {
+    top: 15px;
+    &.menu-displayed {
+      transform: rotate(45deg);
+      top: 22.5px;
+    }
+  }
+  &#wrap-bar-2 {
+    top: 23px;
+    &.menu-displayed {
+      transform: translateX(200%);
+      opacity: 0;
+    }
+  }
+  &#wrap-bar-3 {
+    top: 31px;
+    &.menu-displayed {
+      transform: rotate(-45deg);
+      top: 22.5px;
+    }
+  }
+`;
+
 export default function Header() {
   const router = useRouter();
+  const [display, setDisplay] = useState(false);
 
   return (
     <HeaderContainer>
+      <WrapContainer
+        className={display ? "menu-displayed" : ""}
+        onClick={() => setDisplay(display ? false : true)}
+      >
+        <WrapBar id="wrap-bar-1" className={display ? "menu-displayed" : ""} />
+        <WrapBar id="wrap-bar-2" className={display ? "menu-displayed" : ""} />
+        <WrapBar id="wrap-bar-3" className={display ? "menu-displayed" : ""} />
+      </WrapContainer>
+
       <NavButton href="/">
         <LogoContainer>
           <Logo
@@ -93,8 +206,8 @@ export default function Header() {
           />
         </LogoContainer>
       </NavButton>
-      <NavContainer>
-        <ButtonContainer>
+      <NavContainer className={display ? "menu-displayed" : ""}>
+        <ButtonContainer id={display ? "display-1" : ""}>
           <NavButton href="/">
             <NavText className={router.pathname == "/" ? "active-nav" : ""}>
               Accueil
@@ -104,7 +217,7 @@ export default function Header() {
             className={router.pathname == "/" ? "active-indicator" : ""}
           />
         </ButtonContainer>
-        <ButtonContainer>
+        <ButtonContainer id={display ? "display-2" : ""}>
           <NavButton href="/prestations">
             <NavText
               className={router.pathname == "/prestations" ? "active-nav" : ""}
@@ -118,7 +231,7 @@ export default function Header() {
             }
           />
         </ButtonContainer>
-        <ButtonContainer>
+        <ButtonContainer id={display ? "display-3" : ""}>
           <NavButton href="/paysagiste">
             <NavText
               className={router.pathname == "/paysagiste" ? "active-nav" : ""}
@@ -132,7 +245,7 @@ export default function Header() {
             }
           />
         </ButtonContainer>
-        <ButtonContainer>
+        <ButtonContainer id={display ? "display-4" : ""}>
           <NavButton href="/certification">
             <NavText
               className={
@@ -148,7 +261,7 @@ export default function Header() {
             }
           />
         </ButtonContainer>
-        <ButtonContainer>
+        <ButtonContainer id={display ? "display-5" : ""}>
           <NavButton href="/contact">
             <NavText
               className={router.pathname == "/contact" ? "active-nav" : ""}
