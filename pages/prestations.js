@@ -223,7 +223,7 @@ export default function Home() {
     "Il est parfois difficile d'entretenir seul l'entièreté de son jardin. Je peux alors égaliser et nettoyer votre terrain.",
     "Savoir entretenir son jardin et lui assurer un bon équilibre est important. Il faut alors nettoyer et parfois éliminer les mauvaises herbes.",
     "Lors de la demi-saison, on se retrouve souvent débordé par la charge de travail liée au nettoyage du jardin. Je m'occupe de ramasser et d'évacuer les feuilles mortes.",
-    "Après chacune de mes prestation, je prend en charge l'évacuation des déchets verts si vous le souhaitez.",
+    "Après chacune de mes prestation, je prends en charge l'évacuation des déchets verts si vous le souhaitez.",
   ];
 
   return (
