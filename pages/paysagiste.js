@@ -16,6 +16,17 @@ const bgImgAnimation = keyframes`
   }
 `;
 
+const FadeInAnimation = keyframes`
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
 const Section = styled.section`
   z-index: 0;
   position: relative;
@@ -43,7 +54,11 @@ const Section = styled.section`
     width: 55%;
     height: 100%;
     background: linear-gradient(to right, var(--color-dark), transparent);
-    z-index: 1;
+    z-index: 0;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
   }
 `;
 
@@ -56,7 +71,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   &.paysagiste-right {
     width: 50%;
@@ -64,6 +79,17 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media (max-width: 1000px) {
+    height: 40%;
+    &.paysagiste-left {
+      width: 100%;
+      flex-direction: row;
+      padding: 0 5%;
+    }
+    &.paysagiste-right {
+      width: 100%;
+    }
   }
 `;
 
@@ -77,11 +103,21 @@ const BgImage = styled(Image)`
 `;
 
 const ProfilePicture = styled(Image)`
+  animation: ${FadeInAnimation} 0.5s both ease-in-out;
   z-index: 3;
   position: absolute;
   bottom: 0;
   right: 0;
   object-fit: cover;
+`;
+
+const MapPicture = styled(Image)`
+  z-index: 3;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+  border-radius: 15px;
 `;
 
 const PictureContainer = styled.div`
@@ -91,10 +127,49 @@ const PictureContainer = styled.div`
   height: 400px;
   width: 300px;
   filter: drop-shadow(0 0 1px var(--color-dark));
+  @media (max-width: 1000px) {
+    height: 100%;
+    width: 210px;
+  }
+  &.map-container {
+    z-index: 5;
+    overflow: hidden;
+    width: 80%;
+    height: 50%;
+    border-radius: 15px;
+    bottom: auto;
+    top: 25%;
+    &::before {
+      content: "";
+      z-index: 6;
+      position: absolute;
+      top: 15%;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: 260px;
+      height: 250px;
+      border: 3px solid var(--color-gll);
+      border-radius: 51% 49% 45% 55% / 35% 40% 60% 60%;
+      border-bottom: none;
+      border-top: none;
+    }
+    @media (max-width: 1000px) {
+      height: 75%;
+      width: 100%;
+      position: unset;
+      &::before {
+        width: 200px;
+        height: 150px;
+        top: 25%;
+      }
+    }
+  }
 `;
 
 const Card = styled.div`
   z-index: 5;
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
   position: absolute;
   right: 20%;
@@ -109,7 +184,23 @@ const Card = styled.div`
   filter: drop-shadow(0 0 2px var(--color-dark));
   border-radius: 15px;
   &.expended {
-    width: 150%;
+    width: 160%;
+  }
+  @media (max-width: 1300px) {
+    width: 80%;
+    right: 10%;
+  }
+  @media (max-width: 1000px) {
+    top: 12.5%;
+    width: 90%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    &.expended {
+      top: 12.5%;
+      width: 90%;
+      height: 165%;
+    }
   }
 `;
 
@@ -135,6 +226,23 @@ const Text = styled.p`
       top: 20%;
     }
   }
+  &.under-map {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    font-size: 1.2rem;
+    & a {
+      color: var(--color-warm);
+    }
+    @media (max-width: 1000px) {
+      position: unset;
+      width: unset;
+      margin-top: 0;
+      padding: 0 15px;
+      text-align: justify;
+    }
+  }
 `;
 
 const Svg = styled.svg`
@@ -154,6 +262,17 @@ const Svg = styled.svg`
     top: 5%;
     transform: rotate(180deg);
   }
+  @media (max-width: 1000px) {
+    transform: rotate(-90deg);
+    width: 75px;
+    height: 75px;
+    &:hover {
+      transform: rotate(-90deg) scale(1.1);
+    }
+    &.expended {
+      transform: rotate(90deg);
+    }
+  }
 `;
 
 export default function Home() {
@@ -163,7 +282,16 @@ export default function Home() {
     <Layout page="Taille & Tonte | Paysagiste - Entretien de Jardin">
       <Section>
         <BgImage src="/assets/images/gaz.jpg" layout="fill" />
-        <Container className="paysagiste-left"></Container>
+        <Container className="paysagiste-left">
+          <PictureContainer className="map-container">
+            <MapPicture src="/assets/images/map-concarneau.jpg" layout="fill" />
+          </PictureContainer>
+          <Text className="under-map">
+            Opérationnel sur une zone de 20km autour de Concarneau.
+            <br />
+            Vous pensez être hors zone ? <a href="/contact">Contactez-moi !</a>
+          </Text>
+        </Container>
         <Container className="paysagiste-right">
           <Card
             onClick={() => setExpend(expend ? false : true)}
