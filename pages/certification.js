@@ -15,6 +15,28 @@ const bgImgAnimation = keyframes`
   }
 `;
 
+const FromRightAnimation = keyframes`
+  from {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+const FromLeftAnimation = keyframes`
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
 const Section = styled.section`
   z-index: 0;
   position: relative;
@@ -24,7 +46,7 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   background-color: var(--color-dark);
   &::before {
     content: "";
@@ -46,6 +68,13 @@ const Section = styled.section`
   }
 `;
 
+const Container = styled.div`
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`;
+
 const BgImage = styled(Image)`
   z-index: 0;
   position: absolute;
@@ -55,11 +84,123 @@ const BgImage = styled(Image)`
   animation: ${bgImgAnimation} 0.5s both ease-in-out;
 `;
 
+const Title = styled.h1`
+  animation: ${FromLeftAnimation} 0.4s both ease-in-out;
+  z-index: 2;
+  font-size: 5rem;
+  color: var(--color-light);
+  text-shadow: 0 0 2px var(--color-dark);
+  align-self: flex-start;
+  margin-left: 5%;
+  @media (max-width: 600px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 3rem;
+  }
+`;
+const Text = styled.p`
+  animation: ${FromLeftAnimation} 0.4s both ease-in-out;
+  z-index: 2;
+  font-size: 1.2rem;
+  color: var(--color-light);
+  text-shadow: 0 0 2px var(--color-dark);
+  width: 60%;
+  padding: 0 5%;
+  & a {
+    color: var(--color-warm);
+  }
+  @media (max-width: 450px) {
+    font-size: 0.8rem;
+  }
+  &.certification-sale-number {
+    animation: none;
+    font-size: 6rem;
+    font-family: "Reey", Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 0;
+    width: 90%;
+    color: var(--color-gll);
+    text-shadow: 0 0 2px var(--color-dark);
+    @media (max-width: 700px) {
+      font-size: 5rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 2rem;
+    }
+  }
+  &.certification-subtitle {
+    animation: ${FromRightAnimation} 0.5s both ease-in-out;
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 0;
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+  }
+  &.certification-conditions {
+    animation: ${FromRightAnimation} 0.5s both ease-in-out;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+  }
+`;
+
+const SaleContainer = styled.div`
+  animation: ${FromRightAnimation} 0.5s ease-in-out;
+  width: 40%;
+  height: 100%;
+`;
+
+const SaleBox = styled.div`
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  height: 200px;
+  background-color: var(--color-dark-soft);
+  border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
+  backdrop-filter: blur(15px);
+  border: 2px solid var(--color-gll);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 2px var(--color-dark);
+  @media (max-width: 450px) {
+    height: 120px;
+  }
+`;
+
 export default function Home() {
   return (
     <Layout page="Taille & Tonte | Certification - Entretien de Jardin">
       <Section>
         <BgImage src="/assets/images/gaz.jpg" layout="fill" />
+        <Title>Service à la personne :</Title>
+        <Container>
+          <Text>
+            Mon entreprise est agréée "Service à la Personne" !<br />
+            Vous pouvez bénéficier d’une déduction d’impôt égale à 50% du
+            montant des frais engagés.
+            <br />
+            Pour d'avantages d'informations :{" "}
+            <a target="_blank" href="https://www.servicesalapersonne.gouv.fr/">
+              https://www.servicesalapersonne.gouv.fr/
+            </a>
+          </Text>
+          <SaleContainer>
+            <SaleBox>
+              <Text className="certification-sale-number">-50%</Text>
+            </SaleBox>
+          </SaleContainer>
+        </Container>
+        <Text className="certification-subtitle">Déductible de vos Impôts</Text>
+        <Text className="certification-conditions">
+          selon loi de finances en vigueur.
+        </Text>
       </Section>
     </Layout>
   );
