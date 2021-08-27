@@ -22,8 +22,8 @@ const LogoContainer = styled.div`
   margin: 30px 15px 0 15px;
   width: 250px;
   filter: drop-shadow(1px 0 0 var(--color-dark));
-  @media (max-width: 400px) {
-    width: 200px;
+  @media (max-width: 600px) {
+    width: 150px;
   }
 `;
 

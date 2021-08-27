@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 import Layout from "../components/globals/Layout";
 //import Bg1 from "../images/gaz.jpg";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const bgImgAnimation = keyframes`
@@ -26,6 +26,19 @@ const titleAnimation = keyframes`
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+`;
+
+const saleOffAnimation = keyframes`
+  50% {
+    transform: translateX(-20%) translateY(50%);
+  }
+  55% {
+    z-index: 6;
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+    z-index: 6;
   }
 `;
 
@@ -194,6 +207,32 @@ const Text = styled.p`
       font-size: 0.5rem;
     }
   }
+  &.sale-number {
+    margin: auto;
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Reey", Arial, Helvetica, sans-serif;
+    @media (max-width: 1300px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 800px) {
+      font-size: 2rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 1.5rem;
+    }
+  }
+  &.sale-text {
+    text-align: center;
+    margin: 0 10px;
+    font-size: 1rem;
+    @media (max-width: 1200px) {
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -225,18 +264,75 @@ const Button = styled.button`
   }
 `;
 
+const ServicePersonne = styled.div`
+  animation: ${titleAnimation} 0.5s both ease-in-out;
+  z-index: 5;
+  position: absolute;
+  margin-left: 2%;
+  left: 0;
+  bottom: 8%;
+  height: 15%;
+  width: 20%;
+  cursor: pointer;
+  filter: drop-shadow(0 0 2px var(--color-dark));
+  @media (max-width: 600px) {
+    margin-left: 5%;
+  }
+`;
+
+const SaleOff = styled.div`
+  z-index: 5;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.sale-off-number {
+    top: 0;
+    right: 0;
+    height: 80%;
+    width: 80%;
+    border: 2px solid var(--color-gll);
+    border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
+    background-color: var(--color-dark);
+    backdrop-filter: blur(15px);
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+  &.sale-off-text {
+    z-index: 4;
+    top: 35%;
+    right: 5%;
+    height: 60%;
+    width: 80%;
+    border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
+    background-color: var(--color-light-soft);
+    backdrop-filter: blur(5px);
+    @media (max-width: 600px) {
+      width: 100%;
+    }
+    &.active-sale {
+      animation: ${saleOffAnimation} 0.5s both ease-in-out;
+    }
+  }
+`;
+
 export default function Home() {
+  const [isOver, setIsOver] = useState(false);
+
   useEffect(() => {
     let titleHome = document.getElementById("title-homepage");
     let bgImg1 = document.getElementById("bg-img-1");
+    let service = document.getElementById("service-personne");
 
     window.onscroll = function () {
       let value = window.scrollY;
 
-      bgImg1.style.top = value * 0.6 + "px";
+      bgImg1.style.top = value * 0.7 + "px";
       titleHome.style.left = value * 0.2 + "px";
+      service.style.left = value * 0.8 + "px";
     };
-  });
+  }, []);
 
   return (
     <Layout animation page="Taille et Tonte | Accueil - Entretien de Jardin">
@@ -249,6 +345,26 @@ export default function Home() {
           id="bg-img-1"
         />
         <Title id="title-homepage">Entretenir votre jardin</Title>
+        <Link href="/certification">
+          <ServicePersonne
+            onMouseOver={() => setIsOver(true)}
+            onMouseOut={() => setIsOver(false)}
+            id="service-personne"
+          >
+            <SaleOff
+              className={
+                isOver ? "active-sale sale-off-number" : "sale-off-number"
+              }
+            >
+              <Text className="sale-number">-50%</Text>
+            </SaleOff>
+            <SaleOff
+              className={isOver ? "active-sale sale-off-text" : "sale-off-text"}
+            >
+              <Text className="sale-text">Service à la personne !</Text>
+            </SaleOff>
+          </ServicePersonne>
+        </Link>
         <Reference>
           par Frédéric Stravius <br />-{" "}
           <a href="tel:0619394983">06 19 39 49 83</a> -<br />

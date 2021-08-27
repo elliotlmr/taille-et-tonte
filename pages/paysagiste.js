@@ -28,6 +28,17 @@ const FadeInAnimation = keyframes`
   }
 `;
 
+const FromLeftAnimation = keyframes`
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
 const Section = styled.section`
   z-index: 0;
   position: relative;
@@ -135,7 +146,7 @@ const PictureContainer = styled.div`
   width: 300px;
   filter: drop-shadow(0 0 1px var(--color-dark));
   @media (max-width: 1000px) {
-    height: 100%;
+    height: 280px;
     width: 210px;
   }
   &.map-container {
@@ -146,7 +157,7 @@ const PictureContainer = styled.div`
     border-radius: 15px;
     bottom: auto;
     top: 25%;
-    &::before {
+    /* &::before {
       content: "";
       z-index: 6;
       position: absolute;
@@ -160,16 +171,16 @@ const PictureContainer = styled.div`
       border-radius: 51% 49% 45% 55% / 35% 40% 60% 60%;
       border-bottom: none;
       border-top: none;
-    }
+    } */
     @media (max-width: 1000px) {
       height: 75%;
       width: 100%;
       position: unset;
-      &::before {
+      /* &::before {
         width: 200px;
         height: 150px;
         top: 25%;
-      }
+      } */
     }
     @media (max-width: 550px) {
       height: 60%;
@@ -199,9 +210,13 @@ const Card = styled.div`
   @media (max-width: 1300px) {
     width: 80%;
     right: 10%;
+    &.expended {
+      width: 170%;
+    }
   }
   @media (max-width: 1000px) {
-    top: 12.5%;
+    top: 7.5%;
+    height: 85%;
     width: 90%;
     right: 0;
     left: 0;
@@ -221,6 +236,10 @@ const Title = styled.h1`
   font-size: 3rem;
   color: var(--color-light);
   text-shadow: 0 0 2px var(--color-dark);
+  @media (max-width: 1000px) {
+    //margin: 15px 0;
+    font-size: 2.5rem;
+  }
 `;
 
 const Text = styled.p`
@@ -234,6 +253,9 @@ const Text = styled.p`
     font-size: 1.5rem;
     &.expended {
       top: 20%;
+    }
+    @media (max-width: 1000px) {
+      font-size: 1rem;
     }
   }
   &.under-map {
@@ -255,6 +277,18 @@ const Text = styled.p`
     @media (max-width: 550px) {
       margin-top: 15px;
       font-size: 1rem;
+    }
+  }
+  &.fred-description {
+    animation: ${FromLeftAnimation} 1s both ease-in-out;
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    padding-left: 5%;
+    width: 60%;
+    font-size: 1.3rem;
+    @media (max-width: 700px) {
+      font-size: 1.1rem;
     }
   }
 `;
@@ -289,6 +323,11 @@ const Svg = styled.svg`
   }
 `;
 
+const Map = styled.iframe`
+  height: 100%;
+  width: 100%;
+`;
+
 export default function Home() {
   const [expend, setExpend] = useState(false);
 
@@ -298,16 +337,11 @@ export default function Home() {
         <BgImage src="/assets/images/gaz.jpg" layout="fill" />
         <Container className="paysagiste-left">
           <PictureContainer className="map-container">
-            <iframe
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD4oagS-DQzVtk39VhczQP_BpdCJUexcWs
-            &q=Space+Needle,Seattle+WA"
-              width="600"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen="true"
+            <Map
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d121119.5891943692!2d-3.921396414706637!3d47.870774263989425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1630046160831!5m2!1sen!2sfr"
+              allowFullScreen
               loading="lazy"
-            ></iframe>
-            {/* <MapPicture src="/assets/images/map-concarneau.jpg" layout="fill" /> */}
+            ></Map>
           </PictureContainer>
           <Text className="under-map">
             Opérationnel sur une zone de 20km autour de Concarneau.
@@ -325,6 +359,16 @@ export default function Home() {
             <Text className={expend ? "expended name" : "name"}>
               Frédéric Stravius
             </Text>
+            {expend && (
+              <Text className="fred-description">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged.
+              </Text>
+            )}
             <Svg
               xmlns="http://www.w3.org/2000/svg"
               width={expend ? "50" : "100"}
