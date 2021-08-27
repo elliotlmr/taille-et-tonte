@@ -277,6 +277,8 @@ const ServicePersonne = styled.div`
   filter: drop-shadow(0 0 2px var(--color-dark));
   @media (max-width: 600px) {
     margin-left: 5%;
+    bottom: 5%;
+    height: 10%;
   }
 `;
 
@@ -310,6 +312,8 @@ const SaleOff = styled.div`
     backdrop-filter: blur(5px);
     @media (max-width: 600px) {
       width: 100%;
+      //transform: translateY(50%);
+      top: 25%;
     }
     &.active-sale {
       animation: ${saleOffAnimation} 0.5s both ease-in-out;
@@ -345,7 +349,7 @@ export default function Home() {
           id="bg-img-1"
         />
         <Title id="title-homepage">Entretenir votre jardin</Title>
-        <Link href="/certification">
+        <Link passHref href="/certification">
           <ServicePersonne
             onMouseOver={() => setIsOver(true)}
             onMouseOut={() => setIsOver(false)}
@@ -377,7 +381,7 @@ export default function Home() {
             Choisissez les prestations qui vous intéressent.
           </Text>
         </Subcontainer>
-        <Link href="/prestations">
+        <Link passHref href="/prestations">
           <Button>En savoir plus</Button>
         </Link>
         <Subcontainer className="homepage-sub-2">
