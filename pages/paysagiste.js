@@ -91,6 +91,12 @@ const Container = styled.div`
       width: 100%;
     }
   }
+  @media (max-width: 550px) {
+    &.paysagiste-left {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
 `;
 
 const BgImage = styled(Image)`
@@ -163,6 +169,9 @@ const PictureContainer = styled.div`
         height: 150px;
         top: 25%;
       }
+    }
+    @media (max-width: 550px) {
+      height: 60%;
     }
   }
 `;
@@ -242,6 +251,10 @@ const Text = styled.p`
       padding: 0 15px;
       text-align: justify;
     }
+    @media (max-width: 550px) {
+      margin-top: 15px;
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -284,7 +297,16 @@ export default function Home() {
         <BgImage src="/assets/images/gaz.jpg" layout="fill" />
         <Container className="paysagiste-left">
           <PictureContainer className="map-container">
-            <MapPicture src="/assets/images/map-concarneau.jpg" layout="fill" />
+            <iframe
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD4oagS-DQzVtk39VhczQP_BpdCJUexcWs
+            &q=Space+Needle,Seattle+WA"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowfullscreen="true"
+              loading="lazy"
+            ></iframe>
+            {/* <MapPicture src="/assets/images/map-concarneau.jpg" layout="fill" /> */}
           </PictureContainer>
           <Text className="under-map">
             Opérationnel sur une zone de 20km autour de Concarneau.
