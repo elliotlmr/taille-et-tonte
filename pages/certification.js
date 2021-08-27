@@ -182,12 +182,16 @@ export default function Home() {
         <Title>Service à la personne :</Title>
         <Container>
           <Text>
-            Mon entreprise est agréée "Service à la Personne" !<br />
-            Vous pouvez bénéficier d’une déduction d’impôt égale à 50% du
-            montant des frais engagés.
+            Mon entreprise est agréée &quot;Service à la Personne&quot; !<br />
+            Vous pouvez bénéficier d&apos;une déduction d&apos;impôt égale à 50%
+            du montant des frais engagés.
             <br />
             Pour d'avantages d'informations :{" "}
-            <a target="_blank" href="https://www.servicesalapersonne.gouv.fr/">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.servicesalapersonne.gouv.fr/"
+            >
               https://www.servicesalapersonne.gouv.fr/
             </a>
           </Text>
