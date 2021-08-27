@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Layout from "../components/globals/Layout";
 import { useState } from "react";
+import Link from "next/link";
 
 const bgImgAnimation = keyframes`
   0% {
@@ -303,7 +304,7 @@ export default function Home() {
               width="600"
               height="450"
               style={{ border: 0 }}
-              allowfullscreen="true"
+              allowFullScreen="true"
               loading="lazy"
             ></iframe>
             {/* <MapPicture src="/assets/images/map-concarneau.jpg" layout="fill" /> */}
@@ -311,7 +312,8 @@ export default function Home() {
           <Text className="under-map">
             Opérationnel sur une zone de 20km autour de Concarneau.
             <br />
-            Vous pensez être hors zone ? <a href="/contact">Contactez-moi !</a>
+            Vous pensez être hors zone ?{" "}
+            <Link href="/contact">Contactez-moi !</Link>
           </Text>
         </Container>
         <Container className="paysagiste-right">
