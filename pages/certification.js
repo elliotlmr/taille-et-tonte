@@ -186,7 +186,7 @@ export default function Home() {
             Vous pouvez bénéficier d&apos;une déduction d&apos;impôt égale à 50%
             du montant des frais engagés.
             <br />
-            Pour d'avantages d'informations :{" "}
+            Pour d&apos;avantages d&apos;informations :{" "}
             <a
               rel="noreferrer"
               target="_blank"
