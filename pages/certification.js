@@ -75,13 +75,15 @@ const Container = styled.div`
   flex-direction: row;
 `;
 
-const BgImage = styled(Image)`
-  z-index: 0;
+const BgImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
   object-fit: cover;
   animation: ${bgImgAnimation} 0.5s both ease-in-out;
+  width: auto;
+  min-width: 100%;
+  max-height: 100%;
 `;
 
 const Title = styled.h1`

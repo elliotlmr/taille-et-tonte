@@ -79,14 +79,15 @@ const BgContainer = styled.section`
   }
 `;
 
-const BgImage = styled(Image)`
-  animation: ${bgImgAnimation} 1s both ease-in-out;
+const BgImage = styled.img`
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   object-fit: cover;
-  min-width: 100vw;
-  background-color: var(--color-dark);
+  animation: ${bgImgAnimation} 0.5s both ease-in-out;
+  width: auto;
+  min-width: 100%;
+  max-height: 100%;
 `;
 
 const Subcontainer = styled.div`

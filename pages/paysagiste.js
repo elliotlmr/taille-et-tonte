@@ -113,13 +113,21 @@ const Container = styled.div`
   }
 `;
 
-const BgImage = styled(Image)`
-  z-index: 0;
+const BgImage = styled.img`
+  /* z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  animation: ${bgImgAnimation} 0.5s both ease-in-out; */
   position: absolute;
   top: 0;
   left: 0;
   object-fit: cover;
   animation: ${bgImgAnimation} 0.5s both ease-in-out;
+  width: auto;
+  min-width: 100%;
+  max-height: 100%;
 `;
 
 const ProfilePicture = styled(Image)`
