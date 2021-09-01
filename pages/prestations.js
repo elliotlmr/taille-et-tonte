@@ -47,12 +47,15 @@ const Section = styled.section`
   }
 `;
 
-const BgImage = styled(Image)`
+const BgImage = styled.img`
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   object-fit: cover;
   animation: ${BgImageAnimation} 0.5s both ease-in-out;
+  width: auto;
+  min-width: 100%;
+  max-height: 100%;
 `;
 
 const Container = styled.div`
