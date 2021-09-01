@@ -169,7 +169,7 @@ const Reference = styled.p`
   }
 `;
 
-const Text = styled.p`
+const Text = styled.h2`
   z-index: 2;
   font-size: 3rem;
   color: var(--color-light);
@@ -207,32 +207,6 @@ const Text = styled.p`
     }
     @media (max-width: 450px) {
       font-size: 0.5rem;
-    }
-  }
-  &.sale-number {
-    margin: auto;
-    text-align: center;
-    font-size: 4rem;
-    font-family: "Reey", Arial, Helvetica, sans-serif;
-    @media (max-width: 1300px) {
-      font-size: 3rem;
-    }
-    @media (max-width: 800px) {
-      font-size: 2rem;
-    }
-    @media (max-width: 500px) {
-      font-size: 1.5rem;
-    }
-  }
-  &.sale-text {
-    text-align: center;
-    margin: 0 10px;
-    font-size: 1rem;
-    @media (max-width: 1200px) {
-      font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      font-size: 0.7rem;
     }
   }
 `;
@@ -351,26 +325,6 @@ export default function Home() {
           id="bg-img-1"
         />
         <Title id="title-homepage">Entretenir votre jardin</Title>
-        {/* <Link passHref href="/certification">
-          <ServicePersonne
-            onMouseOver={() => setIsOver(true)}
-            onMouseOut={() => setIsOver(false)}
-            id="service-personne"
-          >
-            <SaleOff
-              className={
-                isOver ? "active-sale sale-off-number" : "sale-off-number"
-              }
-            >
-              <Text className="sale-number">-50%</Text>
-            </SaleOff>
-            <SaleOff
-              className={isOver ? "active-sale sale-off-text" : "sale-off-text"}
-            >
-              <Text className="sale-text">Service à la personne !</Text>
-            </SaleOff>
-          </ServicePersonne>
-        </Link> */}
         <Reference>
           par Frédéric Stravius <br />-{" "}
           <a href="tel:0619394983">06 19 39 49 83</a> -<br />

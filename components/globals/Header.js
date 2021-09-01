@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -30,8 +29,10 @@ const LogoContainer = styled.div`
   }
 `;
 
-const Logo = styled(Image)`
+const Logo = styled.img`
   cursor: pointer;
+  width: 100%;
+  height: 100%;
 `;
 
 const NavContainer = styled.nav`
