@@ -1,9 +1,11 @@
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 import Head from "next/head";
 import styled from "styled-components";
 import Header from "./Header";
+import Footer from "./Footer";
 
-const PageContainer = styled.div``;
+const PageContainer = styled.div`
+  position: relative;
+`;
 
 const MainContainer = styled.main``;
 
@@ -20,6 +22,7 @@ export default function Layout({ children, page }) {
       </Head>
       <Header />
       <MainContainer id="main">{children}</MainContainer>
+      <Footer />
     </PageContainer>
   );
 }

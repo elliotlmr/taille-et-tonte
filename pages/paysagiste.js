@@ -72,6 +72,8 @@ const Section = styled.section`
     flex-direction: column-reverse;
     justify-content: flex-start;
   }
+  @media (max-width: 500px) {
+  }
 `;
 
 const Container = styled.div`
@@ -129,15 +131,6 @@ const ProfilePicture = styled(Image)`
   object-fit: cover;
 `;
 
-const MapPicture = styled(Image)`
-  z-index: 3;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  object-fit: cover;
-  border-radius: 15px;
-`;
-
 const PictureContainer = styled.div`
   position: absolute;
   bottom: 0;
@@ -149,6 +142,10 @@ const PictureContainer = styled.div`
     height: 280px;
     width: 210px;
   }
+  @media (max-width: 550px) {
+    height: 200px;
+    width: 150px;
+  }
   &.map-container {
     z-index: 5;
     overflow: hidden;
@@ -157,30 +154,10 @@ const PictureContainer = styled.div`
     border-radius: 15px;
     bottom: auto;
     top: 25%;
-    /* &::before {
-      content: "";
-      z-index: 6;
-      position: absolute;
-      top: 15%;
-      right: 0;
-      left: 0;
-      margin: auto;
-      width: 260px;
-      height: 250px;
-      border: 3px solid var(--color-gll);
-      border-radius: 51% 49% 45% 55% / 35% 40% 60% 60%;
-      border-bottom: none;
-      border-top: none;
-    } */
     @media (max-width: 1000px) {
       height: 75%;
       width: 100%;
       position: unset;
-      /* &::before {
-        width: 200px;
-        height: 150px;
-        top: 25%;
-      } */
     }
     @media (max-width: 550px) {
       height: 60%;
@@ -227,6 +204,10 @@ const Card = styled.div`
       height: 165%;
     }
   }
+  @media (max-width: 1300px) {
+    height: 95%;
+    top: 2.5%;
+  }
 `;
 
 const Title = styled.h1`
@@ -239,6 +220,9 @@ const Title = styled.h1`
   @media (max-width: 1000px) {
     //margin: 15px 0;
     font-size: 2.5rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 2rem;
   }
 `;
 
@@ -256,6 +240,12 @@ const Text = styled.p`
     }
     @media (max-width: 1000px) {
       font-size: 1rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 0.75rem;
+      &.expended {
+        top: 25%;
+      }
     }
   }
   &.under-map {
@@ -278,6 +268,9 @@ const Text = styled.p`
       margin-top: 15px;
       font-size: 1rem;
     }
+    @media (max-width: 450px) {
+      font-size: 0.75rem;
+    }
   }
   &.fred-description {
     animation: ${FromLeftAnimation} 1s both ease-in-out;
@@ -289,6 +282,12 @@ const Text = styled.p`
     font-size: 1.3rem;
     @media (max-width: 700px) {
       font-size: 1.1rem;
+    }
+    @media (max-width: 550px) {
+      font-size: 0.8rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 0.65rem;
     }
   }
 `;
@@ -320,6 +319,10 @@ const Svg = styled.svg`
     &.expended {
       transform: rotate(90deg);
     }
+  }
+  @media (max-width: 500px) {
+    width: 50px;
+    height: 50px;
   }
 `;
 

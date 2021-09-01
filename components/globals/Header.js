@@ -2,10 +2,10 @@ import styled, { keyframes } from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const HeaderContainer = styled.header`
-  z-index: 5;
+  z-index: 10;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,10 +20,13 @@ const HeaderContainer = styled.header`
 
 const LogoContainer = styled.div`
   margin: 30px 15px 0 15px;
-  width: 250px;
+  width: 220px;
   filter: drop-shadow(1px 0 0 var(--color-dark));
   @media (max-width: 600px) {
     width: 150px;
+  }
+  @media (max-width: 400px) {
+    width: 100px;
   }
 `;
 

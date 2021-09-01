@@ -200,6 +200,7 @@ const Text = styled.p`
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 40px;
+    margin-right: 10%;
     @media (max-width: 550px) {
       font-size: 1rem;
     }
@@ -264,77 +265,77 @@ const Button = styled.button`
   }
 `;
 
-const ServicePersonne = styled.div`
-  animation: ${titleAnimation} 0.5s both ease-in-out;
-  z-index: 5;
-  position: absolute;
-  margin-left: 2%;
-  left: 0;
-  bottom: 8%;
-  height: 15%;
-  width: 20%;
-  cursor: pointer;
-  filter: drop-shadow(0 0 2px var(--color-dark));
-  @media (max-width: 600px) {
-    margin-left: 5%;
-    bottom: 5%;
-    height: 10%;
-  }
-`;
+// const ServicePersonne = styled.div`
+//   animation: ${titleAnimation} 0.5s both ease-in-out;
+//   z-index: 5;
+//   position: absolute;
+//   margin-left: 2%;
+//   left: 0;
+//   bottom: 8%;
+//   height: 15%;
+//   width: 20%;
+//   cursor: pointer;
+//   filter: drop-shadow(0 0 2px var(--color-dark));
+//   @media (max-width: 600px) {
+//     margin-left: 5%;
+//     bottom: 5%;
+//     height: 10%;
+//   }
+// `;
 
-const SaleOff = styled.div`
-  z-index: 5;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &.sale-off-number {
-    top: 0;
-    right: 0;
-    height: 80%;
-    width: 80%;
-    border: 2px solid var(--color-gll);
-    border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
-    background-color: var(--color-dark);
-    backdrop-filter: blur(15px);
-    @media (max-width: 600px) {
-      width: 100%;
-    }
-  }
-  &.sale-off-text {
-    z-index: 4;
-    top: 35%;
-    right: 5%;
-    height: 60%;
-    width: 80%;
-    border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
-    background-color: var(--color-light-soft);
-    backdrop-filter: blur(5px);
-    @media (max-width: 600px) {
-      width: 100%;
-      //transform: translateY(50%);
-      top: 25%;
-    }
-    &.active-sale {
-      animation: ${saleOffAnimation} 0.5s both ease-in-out;
-    }
-  }
-`;
+// const SaleOff = styled.div`
+//   z-index: 5;
+//   position: absolute;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   &.sale-off-number {
+//     top: 0;
+//     right: 0;
+//     height: 80%;
+//     width: 80%;
+//     border: 2px solid var(--color-gll);
+//     border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
+//     background-color: var(--color-dark);
+//     backdrop-filter: blur(15px);
+//     @media (max-width: 600px) {
+//       width: 100%;
+//     }
+//   }
+//   &.sale-off-text {
+//     z-index: 4;
+//     top: 35%;
+//     right: 5%;
+//     height: 60%;
+//     width: 80%;
+//     border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
+//     background-color: var(--color-light-soft);
+//     backdrop-filter: blur(5px);
+//     @media (max-width: 600px) {
+//       width: 100%;
+//       //transform: translateY(50%);
+//       top: 25%;
+//     }
+//     &.active-sale {
+//       animation: ${saleOffAnimation} 0.5s both ease-in-out;
+//     }
+//   }
+// `;
 
 export default function Home() {
-  const [isOver, setIsOver] = useState(false);
+  //const [isOver, setIsOver] = useState(false);
 
   useEffect(() => {
     let titleHome = document.getElementById("title-homepage");
     let bgImg1 = document.getElementById("bg-img-1");
-    let service = document.getElementById("service-personne");
+    //let service = document.getElementById("service-personne");
 
     window.onscroll = function () {
       let value = window.scrollY;
 
       bgImg1.style.top = value * 0.7 + "px";
       titleHome.style.left = value * 0.2 + "px";
-      service.style.left = value * 0.8 + "px";
+      //service.style.left = value * 0.8 + "px";
     };
   }, []);
 
@@ -349,7 +350,7 @@ export default function Home() {
           id="bg-img-1"
         />
         <Title id="title-homepage">Entretenir votre jardin</Title>
-        <Link passHref href="/certification">
+        {/* <Link passHref href="/certification">
           <ServicePersonne
             onMouseOver={() => setIsOver(true)}
             onMouseOut={() => setIsOver(false)}
@@ -368,7 +369,7 @@ export default function Home() {
               <Text className="sale-text">Service à la personne !</Text>
             </SaleOff>
           </ServicePersonne>
-        </Link>
+        </Link> */}
         <Reference>
           par Frédéric Stravius <br />-{" "}
           <a href="tel:0619394983">06 19 39 49 83</a> -<br />

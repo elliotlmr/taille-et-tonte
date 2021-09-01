@@ -107,6 +107,7 @@ const Text = styled.p`
   text-shadow: 0 0 2px var(--color-dark);
   width: 60%;
   padding: 0 5%;
+  text-align: justify;
   & a {
     color: var(--color-warm);
   }
@@ -114,22 +115,28 @@ const Text = styled.p`
     font-size: 0.8rem;
   }
   &.certification-sale-number {
-    animation: none;
-    font-size: 6rem;
+    animation: ${FromRightAnimation} 0.5s both ease-in-out;
+    font-size: 12rem;
     font-family: "Reey", Arial, Helvetica, sans-serif;
     text-align: center;
     padding: 0;
     width: 90%;
-    color: var(--color-gll);
-    text-shadow: 0 0 2px var(--color-dark);
+    color: var(--color-warm);
+    //text-shadow: 0 0 2px var(--color-dark);
+    @media (max-width: 1300px) {
+      font-size: 9rem;
+    }
+    @media (max-width: 1000px) {
+      font-size: 7rem;
+    }
     @media (max-width: 700px) {
-      font-size: 5rem;
+      font-size: 6rem;
     }
     @media (max-width: 600px) {
-      font-size: 3rem;
+      font-size: 5rem;
     }
     @media (max-width: 450px) {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
   &.certification-subtitle {
@@ -161,14 +168,14 @@ const SaleBox = styled.div`
   transition: all 0.3s ease-in-out;
   width: 90%;
   height: 200px;
-  background-color: var(--color-dark-soft);
-  border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
-  backdrop-filter: blur(15px);
-  border: 2px solid var(--color-gll);
+  //background-color: var(--color-gll);
+  //border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
+  //backdrop-filter: blur(15px);
+  //border: 2px solid var(--color-gll);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 2px var(--color-dark);
+  filter: drop-shadow(0 0 2px var(--color-dark));
   @media (max-width: 450px) {
     height: 120px;
   }
