@@ -206,10 +206,6 @@ const Card = styled.div`
       height: 165%;
     }
   }
-  /* @media (max-width: 1300px) {
-    height: 95%;
-    top: 2.5%;
-  } */
 `;
 
 const Title = styled.h1`

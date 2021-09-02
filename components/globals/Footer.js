@@ -42,11 +42,11 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterMenu>
-        <Link href="/mentions">
+        <Link passHref href="/mentions">
           <MenuButton>Mentions Légales</MenuButton>
         </Link>
         <MenuButton>|</MenuButton>
-        <Link href="/paysagiste">
+        <Link passHref href="/paysagiste">
           <MenuButton>Frédéric Stravius</MenuButton>
         </Link>
         <MenuButton>|</MenuButton>
