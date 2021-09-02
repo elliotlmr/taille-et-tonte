@@ -104,13 +104,14 @@ const ButtonContainer = styled.div`
 
 const NavButton = styled(Link)``;
 
-const NavText = styled.span`
+const NavText = styled.a`
   transition: transform 0.3s ease-in-out;
   color: var(--color-light);
   cursor: pointer;
   font-size: 1.4rem;
   padding: 10px;
   filter: drop-shadow(0 0 1px var(--color-dark));
+  text-decoration: none;
   &:hover {
     transform: scale(1.1);
   }
@@ -210,12 +211,13 @@ export default function Header() {
             height="1287"
             layout="responsive"
             priority="true"
+            alt="Logo Taille et Tonte"
           />
         </LogoContainer>
       </NavButton>
       <NavContainer className={display ? "menu-displayed" : ""}>
         <ButtonContainer id={display ? "display-1" : ""}>
-          <NavButton href="/">
+          <NavButton passHref href="/">
             <NavText className={router.pathname == "/" ? "active-nav" : ""}>
               Accueil
             </NavText>
@@ -225,7 +227,7 @@ export default function Header() {
           />
         </ButtonContainer>
         <ButtonContainer id={display ? "display-2" : ""}>
-          <NavButton href="/prestations">
+          <NavButton passHref href="/prestations">
             <NavText
               className={router.pathname == "/prestations" ? "active-nav" : ""}
             >
@@ -239,7 +241,7 @@ export default function Header() {
           />
         </ButtonContainer>
         <ButtonContainer id={display ? "display-3" : ""}>
-          <NavButton href="/paysagiste">
+          <NavButton passHref href="/paysagiste">
             <NavText
               className={router.pathname == "/paysagiste" ? "active-nav" : ""}
             >
@@ -253,7 +255,7 @@ export default function Header() {
           />
         </ButtonContainer>
         <ButtonContainer id={display ? "display-4" : ""}>
-          <NavButton href="/certification">
+          <NavButton passHref href="/certification">
             <NavText
               className={
                 router.pathname == "/certification" ? "active-nav" : ""
@@ -269,7 +271,7 @@ export default function Header() {
           />
         </ButtonContainer>
         <ButtonContainer id={display ? "display-5" : ""}>
-          <NavButton href="/contact">
+          <NavButton passHref href="/contact">
             <NavText
               className={router.pathname == "/contact" ? "active-nav" : ""}
             >
