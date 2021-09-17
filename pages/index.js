@@ -150,9 +150,20 @@ const Subtitle = styled.h2`
   &.homepage-subtitle-2 {
     align-self: flex-start;
     margin: 50px 5%;
+    @media (max-width: 800px) {
+      font-size: 3.8rem;
+    }
+    @media (max-width: 650px) {
+      font-size: 2.8rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 1.8rem;
+      margin-bottom: 0;
+    }
   }
   @media (max-width: 650px) {
     font-size: 3rem;
+    margin: 50px 5%;
   }
   @media (max-width: 450px) {
     font-size: 2rem;
@@ -364,13 +375,18 @@ export default function Home() {
             </Puce>
           </Liste>
           <Text className="homepage-text-3">
-            Pour les contrats dits « à l’année », il s’agit d’un forfait avec un
-            nombre de passage définit à l’avance. (Exemple: 12 interventions à
-            l’annexes pour les tontes, dont deux interventions qui comprennent
-            la taille de vos haies, au printemps et en automne). Lorsque vous
-            renvoyez le devis il doit être accompagné d’un premier règlement
-            égal à la moitié du prix total du contrat. Le deuxième règlement
-            s’effectuera le semestre suivant.
+            Pour les contrats dits <span>« à l’année »</span>, il s’agit d’un
+            forfait avec un nombre de passage définit à l’avance.
+            <br />
+            <span>Par exemple :</span> 12 interventions à l’année pour les
+            tontes, dont deux interventions qui comprennent la taille de vos
+            haies, au printemps et en automne.
+            <br />
+            <em>
+              Lorsque vous renvoyez le devis il doit être accompagné d’un{" "}
+              <span>premier règlement</span> égal à la moitié du prix total du
+              contrat. Le deuxième règlement s’effectuera le semestre suivant.
+            </em>
           </Text>
         </Subcontainer>
         <Link href="/contact">
