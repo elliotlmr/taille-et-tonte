@@ -146,7 +146,7 @@ const WrapContainer = styled.div`
   border-top: 2px solid var(--color-gll);
   border-bottom: 2px solid var(--color-gll);
   border-radius: 100% 0% 100% 0% / 50% 50% 50% 50%;
-  filter: drop-shadow(0 0 2px var(--color-dark));
+  filter: drop-shadow(0 0 1px var(--color-dark));
   &.menu-displayed {
     border-color: var(--color-warm);
   }

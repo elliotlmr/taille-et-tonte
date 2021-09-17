@@ -1,7 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import Layout from "../components/globals/Layout";
-//import Bg1 from "../images/gaz.jpg";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -29,19 +27,6 @@ const titleAnimation = keyframes`
   }
 `;
 
-const saleOffAnimation = keyframes`
-  50% {
-    transform: translateX(-20%) translateY(50%);
-  }
-  55% {
-    z-index: 6;
-  }
-  100% {
-    transform: translateX(0) translateY(0);
-    z-index: 6;
-  }
-`;
-
 const BgContainer = styled.section`
   z-index: 0;
   position: relative;
@@ -54,6 +39,7 @@ const BgContainer = styled.section`
   flex-direction: column;
   &.homepage-s1 {
     background-color: var(--color-dark);
+    border-bottom: 2px solid var(--color-gll);
     &::before {
       content: "";
       position: absolute;
@@ -74,8 +60,17 @@ const BgContainer = styled.section`
     }
   }
   &.homepage-s2 {
-    background-color: var(--color-dark);
+    background-color: var(--color-light);
     justify-content: space-between;
+  }
+  &.homepage-s3 {
+    background-color: var(--color-light);
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 6%;
+    @media (max-width: 800px) {
+      padding-bottom: 15%;
+    }
   }
 `;
 
@@ -102,18 +97,18 @@ const Subcontainer = styled.div`
   }
   &.homepage-sub-2 {
     border-top: 2px solid var(--color-gll);
+    border-bottom: 2px solid var(--color-gll);
     background-image: url("/assets/images/gazon.jpg");
     background-attachment: fixed;
     background-position: 50% 50%;
     justify-content: center;
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 100px;
-      background: linear-gradient(to top, var(--color-dark), transparent);
-      z-index: 1;
+  }
+  &.homepage-sub-3 {
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    @media (max-width: 800px) {
+      flex-direction: column;
     }
   }
 `;
@@ -146,6 +141,24 @@ const Title = styled.h1`
   }
 `;
 
+const Subtitle = styled.h2`
+  z-index: 2;
+  color: var(--color-gll);
+  font-size: 4rem;
+  margin: 50px 50px;
+  filter: drop-shadow(0 0 1px var(--color-dark));
+  &.homepage-subtitle-2 {
+    align-self: flex-start;
+    margin: 50px 5%;
+  }
+  @media (max-width: 650px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 2rem;
+  }
+`;
+
 const Reference = styled.p`
   z-index: 2;
   position: absolute;
@@ -173,18 +186,9 @@ const Text = styled.h2`
   z-index: 2;
   font-size: 3rem;
   color: var(--color-light);
-  filter: drop-shadow(0 0 1px var(--color-dark));
   margin: 0 50px;
   &.homepage-text-1 {
-    font-size: 4rem;
-    @media (max-width: 650px) {
-      font-size: 3rem;
-    }
-    @media (max-width: 450px) {
-      font-size: 2rem;
-    }
-  }
-  &.homepage-text-2 {
+    filter: drop-shadow(0 0 1px var(--color-dark));
     margin: 20px 50px;
     font-size: 2rem;
     align-self: center;
@@ -196,7 +200,8 @@ const Text = styled.h2`
       font-size: 1rem;
     }
   }
-  &.homepage-text-3 {
+  &.homepage-text-2 {
+    filter: drop-shadow(0 0 1px var(--color-dark));
     align-self: flex-end;
     font-size: 1.5rem;
     font-style: italic;
@@ -209,6 +214,44 @@ const Text = styled.h2`
       font-size: 0.5rem;
     }
   }
+  &.homepage-text-3 {
+    color: var(--color-dark);
+    font-size: 1.2rem;
+    margin: 50px 5%;
+    width: 45%;
+    align-self: flex-start;
+    & a {
+      color: var(--color-warm);
+    }
+    & span {
+      color: var(--color-gll);
+    }
+    @media (max-width: 800px) {
+      width: 90%;
+    }
+  }
+`;
+
+const Liste = styled.ul`
+  margin: 50px 5%;
+  align-self: flex-start;
+  width: 45%;
+  @media (max-width: 800px) {
+    width: 85%;
+  }
+`;
+
+const Puce = styled.li`
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
+  color: var(--color-dark);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  & a {
+    color: var(--color-warm);
+  }
+  & span {
+    color: var(--color-gll);
+  }
 `;
 
 const Button = styled.button`
@@ -216,12 +259,6 @@ const Button = styled.button`
   z-index: 2;
   width: 300px;
   height: 100px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
   border: 2px solid var(--color-gll);
   border-radius: 5px;
   filter: drop-shadow(0 0 1px var(--color-dark));
@@ -230,6 +267,17 @@ const Button = styled.button`
   color: var(--color-light);
   font-size: 2rem;
   text-shadow: 0 0 1px var(--color-dark);
+  &.homepage-btn-1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &.homepage-btn-2 {
+    //margin-bottom: 5%;
+  }
   &:hover {
     transform: scale(1.1);
   }
@@ -240,77 +288,16 @@ const Button = styled.button`
   }
 `;
 
-// const ServicePersonne = styled.div`
-//   animation: ${titleAnimation} 0.5s both ease-in-out;
-//   z-index: 5;
-//   position: absolute;
-//   margin-left: 2%;
-//   left: 0;
-//   bottom: 8%;
-//   height: 15%;
-//   width: 20%;
-//   cursor: pointer;
-//   filter: drop-shadow(0 0 2px var(--color-dark));
-//   @media (max-width: 600px) {
-//     margin-left: 5%;
-//     bottom: 5%;
-//     height: 10%;
-//   }
-// `;
-
-// const SaleOff = styled.div`
-//   z-index: 5;
-//   position: absolute;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   &.sale-off-number {
-//     top: 0;
-//     right: 0;
-//     height: 80%;
-//     width: 80%;
-//     border: 2px solid var(--color-gll);
-//     border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
-//     background-color: var(--color-dark);
-//     backdrop-filter: blur(15px);
-//     @media (max-width: 600px) {
-//       width: 100%;
-//     }
-//   }
-//   &.sale-off-text {
-//     z-index: 4;
-//     top: 35%;
-//     right: 5%;
-//     height: 60%;
-//     width: 80%;
-//     border-radius: 75% 25% 80% 20% / 45% 60% 40% 55%;
-//     background-color: var(--color-light-soft);
-//     backdrop-filter: blur(5px);
-//     @media (max-width: 600px) {
-//       width: 100%;
-//       //transform: translateY(50%);
-//       top: 25%;
-//     }
-//     &.active-sale {
-//       animation: ${saleOffAnimation} 0.5s both ease-in-out;
-//     }
-//   }
-// `;
-
 export default function Home() {
-  //const [isOver, setIsOver] = useState(false);
-
   useEffect(() => {
     let titleHome = document.getElementById("title-homepage");
     let bgImg1 = document.getElementById("bg-img-1");
-    //let service = document.getElementById("service-personne");
 
     window.onscroll = function () {
       let value = window.scrollY;
 
       bgImg1.style.top = value * 0.7 + "px";
       titleHome.style.left = value * 0.2 + "px";
-      //service.style.left = value * 0.8 + "px";
     };
   }, []);
 
@@ -333,23 +320,62 @@ export default function Home() {
       </BgContainer>
       <BgContainer className="homepage-s2">
         <Subcontainer className="homepage-sub-1">
-          <Text className="homepage-text-1">
-            Choisissez les prestations qui vous intéressent.
-          </Text>
+          <Subtitle>Choisissez les prestations qui vous intéressent.</Subtitle>
         </Subcontainer>
         <Link passHref href="/prestations">
-          <Button>En savoir plus</Button>
+          <Button className="homepage-btn-1">En savoir plus</Button>
         </Link>
         <Subcontainer className="homepage-sub-2">
-          <Text className="homepage-text-2">
+          <Text className="homepage-text-1">
             Intervention ponctuelle, ou contrat à l&apos;année : <br />
             Nous décidons ensemble de la formule idéale pour l&apos;entretien de
             votre jardin.
           </Text>
-          <Text className="homepage-text-3">
+          <Text className="homepage-text-2">
             Devis gratuits et sans conditions.
           </Text>
         </Subcontainer>
+      </BgContainer>
+      <BgContainer className="homepage-s3">
+        <Subtitle className="homepage-subtitle-2">Comment procéder ?</Subtitle>
+        <Subcontainer className="homepage-sub-3">
+          <Liste>
+            <Puce>
+              <Link href="/contact">Contactez moi</Link> afin que nous puissions
+              convenir d’un rendez-vous.
+            </Puce>
+            <Puce>
+              Je me déplace chez vous et, <span>ensemble</span>, nous évaluons
+              le travail à effectuer. J’estime un nombre d’heures pour pouvoir
+              vous faire parvenir un <span>devis</span> avec le détail des
+              travaux.
+            </Puce>
+            <Puce>
+              Lorsque je reçois ce <span>devis signé</span>, j’interviens
+              rapidement. Vous receverez alors une <span>facture</span> et le{" "}
+              <span>règlement</span> à me faire parvenir (chèque, virement
+              bancaire…).
+            </Puce>
+            <Puce>
+              En début d’année suivante, je rédige une{" "}
+              <span>attestation fiscale</span> qui vous permettra de bénéficier
+              d’une <span>réduction d’impôts</span> égale à{" "}
+              <span>50% du prix des travaux effectués</span>.
+            </Puce>
+          </Liste>
+          <Text className="homepage-text-3">
+            Pour les contrats dits « à l’année », il s’agit d’un forfait avec un
+            nombre de passage définit à l’avance. (Exemple: 12 interventions à
+            l’annexes pour les tontes, dont deux interventions qui comprennent
+            la taille de vos haies, au printemps et en automne). Lorsque vous
+            renvoyez le devis il doit être accompagné d’un premier règlement
+            égal à la moitié du prix total du contrat. Le deuxième règlement
+            s’effectuera le semestre suivant.
+          </Text>
+        </Subcontainer>
+        <Link href="/contact">
+          <Button className="homepage-btn-2">Contactez-moi !</Button>
+        </Link>
       </BgContainer>
     </Layout>
   );

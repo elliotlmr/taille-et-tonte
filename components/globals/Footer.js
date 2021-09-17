@@ -26,7 +26,7 @@ const FooterMenu = styled.ul`
 const MenuButton = styled.li`
   font-family: "Montserrat-Bold";
   color: var(--color-gll);
-  text-shadow: 0 0 2px var(--color-dark);
+  text-shadow: 0 0 1px var(--color-dark);
   margin: 0 5px;
   font-size: 0.8rem;
   cursor: pointer;
@@ -53,7 +53,7 @@ export default function Footer() {
         <a
           rel="noreferrer"
           target="_blank"
-          href="https://www.linkedin.com/in/elliot-lemaire/"
+          href="https://shiro-e-portfolio.vercel.app/"
         >
           <MenuButton>Shiro-e Web Design</MenuButton>
         </a>

@@ -240,6 +240,7 @@ export default function Home() {
                 width="32px"
                 height="32px"
                 layout="fixed"
+                alt="Logo feuille"
               />
               <span>Tonte de pelouse</span>
             </Prestation>
@@ -249,6 +250,7 @@ export default function Home() {
                 width="32px"
                 height="32px"
                 layout="fixed"
+                alt="Logo feuille"
               />
               <span>Taille de haie et d&apos;arbustes</span>
             </Prestation>
@@ -258,6 +260,7 @@ export default function Home() {
                 width="32px"
                 height="32px"
                 layout="fixed"
+                alt="Logo feuille"
               />
               <span>Débroussaillage</span>
             </Prestation>
@@ -267,6 +270,7 @@ export default function Home() {
                 width="32px"
                 height="32px"
                 layout="fixed"
+                alt="Logo feuille"
               />
               <span>Désherbage, bêchage, binage</span>
             </Prestation>
@@ -276,6 +280,7 @@ export default function Home() {
                 width="32px"
                 height="32px"
                 layout="fixed"
+                alt="Logo feuille"
               />
               <span>Ramassage des feuilles</span>
             </Prestation>
@@ -285,6 +290,7 @@ export default function Home() {
                 width="32px"
                 height="32px"
                 layout="fixed"
+                alt="Logo feuille"
               />
               <span>Évacuation des déchets verts</span>
             </Prestation>
