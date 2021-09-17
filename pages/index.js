@@ -100,7 +100,7 @@ const Subcontainer = styled.div`
     border-bottom: 2px solid var(--color-gll);
     background-image: url("/assets/images/gazon.jpg");
     background-attachment: fixed;
-    background-position: 50% 50%;
+    background-position: center;
     justify-content: center;
   }
   &.homepage-sub-3 {
@@ -171,6 +171,7 @@ const Subtitle = styled.h2`
 `;
 
 const Reference = styled.p`
+  animation: ${titleAnimation} 0.5s both ease-in-out;
   z-index: 2;
   position: absolute;
   bottom: 5%;
