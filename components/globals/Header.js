@@ -240,20 +240,6 @@ export default function Header() {
             }
           />
         </ButtonContainer>
-        <ButtonContainer id={display ? "display-3" : ""}>
-          <NavButton passHref href="/paysagiste">
-            <NavText
-              className={router.pathname == "/paysagiste" ? "active-nav" : ""}
-            >
-              Paysagiste
-            </NavText>
-          </NavButton>
-          <Indicator
-            className={
-              router.pathname == "/paysagiste" ? "active-indicator" : ""
-            }
-          />
-        </ButtonContainer>
         <ButtonContainer id={display ? "display-4" : ""}>
           <NavButton passHref href="/certification">
             <NavText

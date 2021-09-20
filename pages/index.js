@@ -107,6 +107,7 @@ const Subcontainer = styled.div`
     height: auto;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     @media (max-width: 800px) {
       flex-direction: column;
     }
@@ -248,8 +249,10 @@ const Liste = styled.ul`
   margin: 50px 5%;
   align-self: flex-start;
   width: 45%;
+  padding: 0;
   @media (max-width: 800px) {
     width: 85%;
+    align-self: center;
   }
 `;
 
