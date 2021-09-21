@@ -393,7 +393,7 @@ export default function Home() {
             </em>
           </Text>
         </Subcontainer>
-        <Link href="/contact">
+        <Link passHref href="/contact">
           <Button className="homepage-btn-2">Contactez-moi !</Button>
         </Link>
       </BgContainer>

@@ -24,7 +24,7 @@ const Section = styled.div`
   background-color: var(--color-light);
 `;
 
-const Introduction = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 60vh;
   display: flex;
@@ -52,6 +52,44 @@ const Prestation = styled.div`
     width: 100%;
     height: 10vh;
     background: linear-gradient(to top, var(--color-dark-soft), transparent);
+  }
+  &.presta-1 {
+    background-image: url(/assets/images/tonte.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &.presta-2 {
+    background-image: url(/assets/images/haie.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &.presta-3 {
+    background-image: url(/assets/images/debroussaillage.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &.presta-4 {
+    background-image: url(/assets/images/desherbage.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &.presta-5 {
+    background-image: url(/assets/images/feuille.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &.presta-6 {
+    background-image: url(/assets/images/dechets.jpg);
+    background-position: bottom;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid var(--color-gll);
   }
 `;
 
@@ -130,33 +168,34 @@ export default function Prestations() {
   return (
     <Layout page="Taille et Tonte | Prestations - Entretien de Jardin">
       <Section id="prestations">
-        <Introduction id="prestations-intro">
+        <Container id="prestations-intro">
           <Title id="prestations-title">Découvrez mes prestations.</Title>
-        </Introduction>
-        <Prestation>
+        </Container>
+        <Prestation className="presta-1">
           <Subtitle>Tonte de pelouse</Subtitle>
-          <BgImage src="/assets/images/tonte.jpg" />
+          {/* <BgImage src="/assets/images/tonte.jpg" /> */}
         </Prestation>
-        <Prestation>
-          <Subtitle>Taille de haie et d'arbustes</Subtitle>
-          <BgImage src="/assets/images/haie.jpg" />
+        <Prestation className="presta-2">
+          <Subtitle>Taille de haie et d&apos;arbustes</Subtitle>
+          {/* <BgImage src="/assets/images/haie.jpg" /> */}
         </Prestation>
-        <Prestation>
+        <Prestation className="presta-3">
           <Subtitle>Débroussaillage</Subtitle>
-          <BgImage src="/assets/images/debroussaillage.jpg" />
+          {/* <BgImage src="/assets/images/debroussaillage.jpg" /> */}
         </Prestation>
-        <Prestation>
+        <Prestation className="presta-4">
           <Subtitle>Désherbage, bêchage, binage</Subtitle>
-          <BgImage src="/assets/images/desherbage.jpg" />
+          {/* <BgImage src="/assets/images/desherbage.jpg" /> */}
         </Prestation>
-        <Prestation>
+        <Prestation className="presta-5">
           <Subtitle>Ramassage des feuilles</Subtitle>
-          <BgImage src="/assets/images/feuille.jpg" />
+          {/* <BgImage src="/assets/images/feuille.jpg" /> */}
         </Prestation>
-        <Prestation>
+        <Prestation className="presta-6">
           <Subtitle>Évacuation des déchets verts</Subtitle>
-          <BgImage src="/assets/images/dechets.jpg" />
+          {/* <BgImage src="/assets/images/dechets.jpg" /> */}
         </Prestation>
+        <Container></Container>
         <Arrow id="prestations-arrow">
           <svg
             xmlns="http://www.w3.org/2000/svg"
