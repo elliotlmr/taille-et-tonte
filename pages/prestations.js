@@ -25,6 +25,7 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 60vh;
   display: flex;
@@ -166,7 +167,7 @@ export default function Prestations() {
   });
 
   return (
-    <Layout page="Taille et Tonte | Prestations - Entretien de Jardin">
+    <Layout black page="Taille et Tonte | Prestations - Entretien de Jardin">
       <Section id="prestations">
         <Container id="prestations-intro">
           <Title id="prestations-title">Découvrez mes prestations.</Title>

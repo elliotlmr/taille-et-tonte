@@ -106,17 +106,25 @@ const NavButton = styled(Link)``;
 
 const NavText = styled.a`
   transition: transform 0.3s ease-in-out;
-  color: var(--color-light);
+  color: ${(props) =>
+    props.black ? "var(--color-dark)" : "var(--color-light)"};
   cursor: pointer;
   font-size: 1.4rem;
   padding: 10px;
-  filter: drop-shadow(0 0 1px var(--color-dark));
+  filter: ${(props) =>
+    props.black
+      ? "drop-shadow(0 0 1px var(--color-light))"
+      : "drop-shadow(0 0 1px var(--color-dark))"};
   text-decoration: none;
   &:hover {
     transform: scale(1.1);
   }
   &.active-nav {
     transform: scale(1.1);
+  }
+  @media (max-width: 1024px) {
+    color: var(--color-light);
+    filter: drop-shadow(0 0 1px var(--color-dark));
   }
 `;
 
@@ -188,7 +196,7 @@ const WrapBar = styled.div`
   }
 `;
 
-export default function Header() {
+export default function Header(props) {
   const router = useRouter();
   const [display, setDisplay] = useState(false);
 
@@ -218,7 +226,10 @@ export default function Header() {
       <NavContainer className={display ? "menu-displayed" : ""}>
         <ButtonContainer id={display ? "display-1" : ""}>
           <NavButton passHref href="/">
-            <NavText className={router.pathname == "/" ? "active-nav" : ""}>
+            <NavText
+              black={props.black}
+              className={router.pathname == "/" ? "active-nav" : ""}
+            >
               Accueil
             </NavText>
           </NavButton>
@@ -229,6 +240,7 @@ export default function Header() {
         <ButtonContainer id={display ? "display-2" : ""}>
           <NavButton passHref href="/prestations">
             <NavText
+              black={props.black}
               className={router.pathname == "/prestations" ? "active-nav" : ""}
             >
               Prestations
@@ -243,6 +255,7 @@ export default function Header() {
         <ButtonContainer id={display ? "display-4" : ""}>
           <NavButton passHref href="/certification">
             <NavText
+              black={props.black}
               className={
                 router.pathname == "/certification" ? "active-nav" : ""
               }
@@ -259,6 +272,7 @@ export default function Header() {
         <ButtonContainer id={display ? "display-5" : ""}>
           <NavButton passHref href="/contact">
             <NavText
+              black={props.black}
               className={router.pathname == "/contact" ? "active-nav" : ""}
             >
               Contact

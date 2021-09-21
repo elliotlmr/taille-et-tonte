@@ -9,7 +9,7 @@ const PageContainer = styled.div`
 
 const MainContainer = styled.main``;
 
-export default function Layout({ children, page }) {
+export default function Layout({ black, children, page }) {
   return (
     <PageContainer>
       <Head>
@@ -20,7 +20,7 @@ export default function Layout({ children, page }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header black={black} />
       <MainContainer id="main">{children}</MainContainer>
       <Footer />
     </PageContainer>
