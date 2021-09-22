@@ -319,9 +319,9 @@ export default function Prestations() {
             Autres prestations..
           </Subtitle>
           <Text className="prestations-description other">
-            N'hésitez pas à <Link href="/contact">me contacter</Link> afin de me
-            demander directement si la/les prestation(s) que vous recherchez
-            est/sont réalisable(s).
+            N&apos;hésitez pas à <Link href="/contact">me contacter</Link> afin
+            de me demander directement si la/les prestation(s) que vous
+            recherchez est/sont réalisable(s).
           </Text>
           <Link passHref href="/contact">
             <Button id="prestations-btn">Contactez-moi !</Button>
