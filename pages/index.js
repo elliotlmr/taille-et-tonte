@@ -370,8 +370,8 @@ export default function Home() {
               faire parvenir (chèque, virement bancaire…).
             </Puce>
             <Puce>
-              <span>Je rédige une attestation fiscale</span> en début d'année
-              suivante, qui vous permettra de bénéficier d&apos;une{" "}
+              <span>Je rédige une attestation fiscale</span> en début
+              d&apos;année suivante, qui vous permettra de bénéficier d&apos;une{" "}
               <Link href="/certification">réduction d&apos;impôts</Link> égale à{" "}
               <span>50% du prix des travaux effectués</span>.
             </Puce>
