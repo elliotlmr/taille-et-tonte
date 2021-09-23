@@ -357,36 +357,38 @@ export default function Home() {
           <Liste>
             <Puce>
               <Link href="/contact">Contactez moi</Link> afin que nous puissions
-              convenir d’un <span>rendez-vous</span>.
+              convenir d&apos;un <span>rendez-vous</span>.
             </Puce>
             <Puce>
               <span>Je me déplace chez vous</span> et, ensemble, nous évaluons
-              le travail à effectuer. J’estime un nombre d’heures pour pouvoir
-              vous faire parvenir un devis avec le détail des travaux.
+              le travail à effectuer. J&apos;estime un nombre d’heures pour
+              pouvoir vous faire parvenir un devis avec le détail des travaux.
             </Puce>
             <Puce>
-              <span>J'interviens rapidement</span> après avoir reçu le devis
-              signé. Vous receverez alors une facture et le règlement à me faire
-              parvenir (chèque, virement bancaire…).
+              <span>J&apos;interviens rapidement</span> après avoir reçu le
+              devis signé. Vous receverez alors une facture et le règlement à me
+              faire parvenir (chèque, virement bancaire…).
             </Puce>
             <Puce>
               <span>Je rédige une attestation fiscale</span> en début d'année
-              suivante, qui vous permettra de bénéficier d’une réduction
-              d’impôts égale à <span>50% du prix des travaux effectués</span>.
+              suivante, qui vous permettra de bénéficier d&apos;une{" "}
+              <Link href="/certification">réduction d&apos;impôts</Link> égale à{" "}
+              <span>50% du prix des travaux effectués</span>.
             </Puce>
           </Liste>
           <Text className="homepage-text-3">
-            Pour les contrats dits <span>« à l’année »</span>, il s’agit d’un
-            forfait avec un nombre de passage définit à l’avance.
+            Pour les contrats dits <span>« à l&apos;année »</span>, il s’agit
+            d&apos;un forfait avec un nombre de passage définit à l&apos;avance.
             <br />
-            <span>Par exemple :</span> 12 interventions à l’année pour les
+            <span>Par exemple :</span> 12 interventions à l&apos;année pour les
             tontes, dont deux interventions qui comprennent la taille de vos
             haies, au printemps et en automne.
             <br />
             <em>
-              Lorsque vous renvoyez le devis il doit être accompagné d’un{" "}
+              Lorsque vous renvoyez le devis il doit être accompagné d&apos;un{" "}
               <span>premier règlement</span> égal à la moitié du prix total du
-              contrat. Le deuxième règlement s’effectuera le semestre suivant.
+              contrat. Le deuxième règlement s&apos;effectuera le semestre
+              suivant.
             </em>
           </Text>
         </Subcontainer>
