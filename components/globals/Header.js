@@ -174,21 +174,21 @@ const WrapBar = styled.div`
   border-radius: 50px;
   background-color: var(--color-light);
   &#wrap-bar-1 {
-    top: 15px;
+    top: 12px;
     &.menu-displayed {
       transform: rotate(45deg);
       top: 22.5px;
     }
   }
   &#wrap-bar-2 {
-    top: 23px;
+    top: 21px;
     &.menu-displayed {
       transform: translateX(200%);
       opacity: 0;
     }
   }
   &#wrap-bar-3 {
-    top: 31px;
+    top: 30px;
     &.menu-displayed {
       transform: rotate(-45deg);
       top: 22.5px;

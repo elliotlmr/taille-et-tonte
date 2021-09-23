@@ -83,8 +83,8 @@ const Title = styled.h1`
     font-size: 3rem;
   }
   @media (max-width: 450px) {
-    font-size: 1.5rem;
-    margin: 35px 15%;
+    font-size: 2rem;
+    margin: 35px 5%;
   }
 `;
 
@@ -94,11 +94,10 @@ const Text = styled.p`
   text-shadow: 0 0 2px var(--color-dark);
   align-self: flex-start;
   text-align: justify;
-  @media (max-width: 550px) {
-    font-size: 1rem;
-  }
-  @media (max-width: 450px) {
-    font-size: 0.8rem;
+  &.contact-outro {
+    @media (max-width: 550px) {
+      font-size: 0.8rem;
+    }
   }
 `;
 
@@ -110,6 +109,16 @@ const ContactLink = styled.a`
   }
   @media (max-width: 320px) {
     font-size: 0.6rem;
+  }
+  &.phone-number {
+    font-size: 2rem;
+    margin-bottom: 5%;
+    @media (max-width: 450px) {
+      font-size: 1.5rem;
+    }
+    @media (max-width: 320px) {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -185,8 +194,10 @@ export default function Contact() {
             </svg>
           </LinkContainer>
           <Text>Par téléphone :</Text>
-          <ContactLink href="tel:0619394983">06 19 39 49 83</ContactLink>
-          <Text>
+          <ContactLink className="phone-number" href="tel:0619394983">
+            06 19 39 49 83
+          </ContactLink>
+          <Text className="contact-outro">
             Créons ensemble un projet personnalisé pour votre jardin, ou
             posez-moi les questions que vous souhaitez, je vous répondrai au
             plus vite.

@@ -357,25 +357,22 @@ export default function Home() {
           <Liste>
             <Puce>
               <Link href="/contact">Contactez moi</Link> afin que nous puissions
-              convenir d’un rendez-vous.
+              convenir d’un <span>rendez-vous</span>.
             </Puce>
             <Puce>
-              Je me déplace chez vous et, <span>ensemble</span>, nous évaluons
+              <span>Je me déplace chez vous</span> et, ensemble, nous évaluons
               le travail à effectuer. J’estime un nombre d’heures pour pouvoir
-              vous faire parvenir un <span>devis</span> avec le détail des
-              travaux.
+              vous faire parvenir un devis avec le détail des travaux.
             </Puce>
             <Puce>
-              Lorsque je reçois ce <span>devis signé</span>, j’interviens
-              rapidement. Vous receverez alors une <span>facture</span> et le{" "}
-              <span>règlement</span> à me faire parvenir (chèque, virement
-              bancaire…).
+              <span>J'interviens rapidement</span> après avoir reçu le devis
+              signé. Vous receverez alors une facture et le règlement à me faire
+              parvenir (chèque, virement bancaire…).
             </Puce>
             <Puce>
-              En début d’année suivante, je rédige une{" "}
-              <span>attestation fiscale</span> qui vous permettra de bénéficier
-              d’une <span>réduction d’impôts</span> égale à{" "}
-              <span>50% du prix des travaux effectués</span>.
+              <span>Je rédige une attestation fiscale</span> en début d'année
+              suivante, qui vous permettra de bénéficier d’une réduction
+              d’impôts égale à <span>50% du prix des travaux effectués</span>.
             </Puce>
           </Liste>
           <Text className="homepage-text-3">
