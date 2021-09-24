@@ -48,6 +48,10 @@ const Section = styled.section`
   align-items: center;
   flex-direction: column;
   background-color: var(--color-light);
+  background-image: url(/assets/vines-light.png);
+  background-position: bottom right;
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
 const Container = styled.div`

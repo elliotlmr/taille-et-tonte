@@ -20,7 +20,10 @@ const HeaderContainer = styled.header`
 const LogoContainer = styled.div`
   margin: 30px 15px 0 15px;
   width: 220px;
-  filter: drop-shadow(1px 0 0 var(--color-dark));
+  filter: ${(props) =>
+    props.black
+      ? "drop-shadow(0 0.5px 0 var(--color-dark))"
+      : "drop-shadow(0 0.5px 0 var(--color-light))"};
   @media (max-width: 600px) {
     width: 150px;
   }
@@ -212,9 +215,9 @@ export default function Header(props) {
       </WrapContainer>
 
       <NavButton href="/">
-        <LogoContainer>
+        <LogoContainer black={props.black}>
           <Logo
-            src="/assets/logo-big.png"
+            src="/assets/logo-tt.png"
             width="2045"
             height="1287"
             layout="responsive"
