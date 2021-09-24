@@ -46,7 +46,7 @@ export default function Footer() {
           <MenuButton>Mentions Légales</MenuButton>
         </Link>
         <MenuButton>|</MenuButton>
-        <Link passHref href="/paysagiste">
+        <Link passHref href="/contact">
           <MenuButton>Frédéric Stravius</MenuButton>
         </Link>
         <MenuButton>|</MenuButton>

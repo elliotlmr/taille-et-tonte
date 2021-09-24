@@ -378,7 +378,8 @@ export default function Home() {
           </Liste>
           <Text className="homepage-text-3">
             Pour les contrats dits <span>« à l&apos;année »</span>, il s’agit
-            d&apos;un forfait avec un nombre de passage définit à l&apos;avance.
+            d&apos;un forfait avec un nombre de passages définis à
+            l&apos;avance.
             <br />
             <span>Par exemple :</span> 12 interventions à l&apos;année pour les
             tontes, dont deux interventions qui comprennent la taille de vos
